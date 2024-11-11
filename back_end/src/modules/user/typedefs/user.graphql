@@ -1,0 +1,31 @@
+scalar Date
+
+type User {
+  id: ID!
+  email: String!
+  dob: Date!
+  attempts: Int!
+  points: Int!
+}
+type LoginResponse {
+  id: Int!
+  expiresAt: Date!
+  token: String!
+}
+type Query {
+  me: User
+}
+type Mutation {
+  registerUser(input: UserCreateInput!): User
+  login(input: LoginInput!): LoginResponse
+}
+
+input UserCreateInput {
+  email: String!
+  password: String!
+  dob: Date!
+}
+input LoginInput {
+  email: String!
+  password: String!
+}

@@ -1,0 +1,23 @@
+scalar Date
+type StartGameResponse {
+  numberGenerated: Int!
+  pointsAdded: Int!
+  attemptsRemaining: Int!
+  totalPoints: Int!
+}
+type Query {
+  getCoupons: [Coupon!]!
+}
+type Mutation {
+  startGame(randomNumber: Int!): StartGameResponse!
+  createCoupon(coupon: CouponCreateInput!): Coupon!
+  redeemCoupon(couponCode: String!): Coupon!
+}
+
+input CouponCreateInput {
+  code: String!
+}
+type Coupon {
+  id: Int!
+  code: String!
+}

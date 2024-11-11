@@ -1,0 +1,141 @@
+.navbarWrapper {
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 15px;
+
+  background-color: #040404;
+}
+
+.menuWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user {
+  display: flex;
+  gap: 10px;
+
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+.account {
+  height: 30px;
+  width: 30px;
+  background-color: grey;
+  color: white;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prize {
+  border-radius: 5px;
+
+  background-color: grey;
+
+  padding: 2px 7px;
+
+  color: white;
+}
+
+.prize span {
+  color: pink;
+
+  font-size: large;
+  font-weight: 600;
+}
+
+/* code */
+.wrap {
+  width: 450px;
+}
+.coupon {
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.couponLeft {
+  float: left;
+  width: 50px;
+  height: 100px;
+  position: relative;
+}
+.couponLeft::before {
+  content: '';
+  position: absolute;
+  top: -210px;
+  display: block;
+  right: -210px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 200px solid #252525;
+  clip: rect(auto, auto, 285px, auto);
+}
+.couponLeft::after {
+  content: '';
+  position: absolute;
+  bottom: -210px;
+  display: block;
+  right: -210px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 200px solid #252525;
+  clip: rect(135px, auto, auto, auto);
+}
+.couponRight {
+  float: left;
+  width: 400px;
+  height: 100px;
+  position: relative;
+}
+.couponRight::before {
+  content: '';
+  position: absolute;
+  top: -410px;
+  display: block;
+  left: -410px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 400px solid #f3f3f3;
+  clip: rect(0, auto, 485px, 410px);
+}
+.couponRight::after {
+  content: '';
+  position: absolute;
+  bottom: -410px;
+  display: block;
+  left: -410px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 400px solid #f3f3f3;
+  clip: rect(335px, auto, auto, 410px);
+}
+.code {
+  z-index: 500;
+  position: absolute;
+  right: 50%;
+  transform: translateX(50%);
+  top: -5px;
+  font-weight: 500;
+  letter-spacing: 5px;
+}

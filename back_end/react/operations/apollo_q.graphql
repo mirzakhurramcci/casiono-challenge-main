@@ -1,0 +1,56 @@
+mutation Register($input: UserCreateInput!) {
+  registerUser(input: $input) {
+    attempts
+    dob
+    email
+    id
+    points
+  }
+}
+
+mutation Login($input: LoginInput!) {
+  login(input: $input) {
+    expiresAt
+    id
+    token
+  }
+}
+
+query Me {
+  me {
+    attempts
+    dob
+    email
+    id
+    points
+  }
+}
+
+mutation StartGame($randomNumber: Int!) {
+  startGame(randomNumber: $randomNumber) {
+    attemptsRemaining
+    numberGenerated
+    pointsAdded
+    totalPoints
+  }
+}
+
+query Query {
+  getCoupons {
+    code
+    id
+  }
+}
+
+mutation CreateCoupon($coupon: CouponCreateInput!) {
+  createCoupon(coupon: $coupon) {
+    code
+    id
+  }
+}
+mutation RedeemCoupon($couponCode: String!) {
+  redeemCoupon(couponCode: $couponCode) {
+    code
+    id
+  }
+}

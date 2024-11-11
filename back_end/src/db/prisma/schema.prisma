@@ -1,0 +1,26 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       Int      @id @default(autoincrement())
+  email    String   @unique
+  password String
+  dob      DateTime
+  attempts Int      @default(50)
+  points   Int      @default(0)
+  coupons  Coupon[]
+}
+
+model Coupon {
+  id     Int     @id @default(autoincrement())
+  code   String  @unique
+  userId Int
+  active Boolean @default(true)
+  user   User    @relation(fields: [userId], references: [id])
+}
